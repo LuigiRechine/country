@@ -1,0 +1,105 @@
+/* Hero.css - Layout em Padrão F */
+.hero {
+  height: 92vh;
+  min-height: 680px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(20, 15, 10, 0.88) 0%,
+    rgba(20, 15, 10, 0.75) 40%,
+    rgba(30, 20, 15, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: left;           /* Mudança principal */
+}
+
+.logo-hero {
+  width: 160px;
+  height: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.7));
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #C9A227;
+  color: #3E2723;
+  font-weight: 700;
+  padding: 8px 26px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-weight: 800;
+  color: #EFEBE9;
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.9);
+  letter-spacing: -2.5px;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  color: #D7CCC8;
+  max-width: 580px;
+  line-height: 1.45;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 20px 52px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #3E2723;
+  background: #C9A227;
+  border: 3px solid #C9A227;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);
+}
+
+.hero-button:hover {
+  background: #EFEBE9;
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+    padding: 0 20px;
+  }
+  .hero::before {
+    background: linear-gradient(rgba(20,15,10,0.9), rgba(30,20,15,0.85));
+  }
+}

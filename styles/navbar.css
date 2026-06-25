@@ -1,0 +1,78 @@
+/* navbar.css - Tema Country */
+.navbar {
+  background: linear-gradient(180deg, #3F2A1E 0%, #2C1F14 100%);
+  border-bottom: 3px solid #D4A017; /* Dourado country */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.nav-logo {
+  font-family: 'Georgia', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #D4A017;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  color: #E8B923;
+}
+
+.nav-link {
+  color: #EDE4D5;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #D4A017;
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #D4A017;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.search-input {
+  background-color: #1C140F;
+  border: 2px solid #5C4634;
+  color: #EDE4D5;
+}
+
+.search-input:focus {
+  border-color: #D4A017;
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.2);
+}
+
+.cart-icon, .account-icon {
+  transition: transform 0.3s ease;
+}
+
+.cart-icon:hover, .account-icon:hover {
+  transform: scale(1.15);
+  color: #D4A017;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  background: #2C1F14;
+  border-top: 2px solid #D4A017;
+}
