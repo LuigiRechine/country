@@ -13,7 +13,7 @@ export const products: Product[] = [
     precoAntigo: 619.90,
     parcelas: '12x de R$ 45,82',
     avaliacao: 4.9,
-    imagens: ['/produtos/bota-couro-masc.jpg'],
+    imagens: ['/produtos/masculino/bota-couro-masc.webp', '/produtos/masculino/bota-couro-masc.webp', '/produtos/masculino/bota-couro-masc.webp'],
     cores: ['#3B1F0A', '#000000', '#8B4513'],
     tamanhos: ['38', '39', '40', '41', '42', '43'],
     destaque: 'Mais Vendido',

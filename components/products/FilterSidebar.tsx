@@ -12,6 +12,7 @@ const CATEGORIAS: ProductCategory[] = [
   'Camisas',
   'Calças',
   'Cintos',
+  'Acessórios'
 ];
 
 const GENEROS: ProductGender[] = [

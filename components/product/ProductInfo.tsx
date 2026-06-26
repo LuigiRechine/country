@@ -4,28 +4,29 @@ import '@/styles/info.css';
 
 type Props = {
   product: any;
-  onAddToCart: (product: any, tamanho: string, cor: string, quantidade: number) => void;
 };
 
-export default function ProductInfo({ product, onAddToCart }: Props) {
+export default function ProductInfo({ product }: Props) {
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState(product.cores[0]);
   const [quantity, setQuantity] = useState(1);
 
   const handleBuy = () => {
     if (!selectedSize) {
-      alert('Por favor, selecione um tamanho!');
+      alert('❗ Por favor, selecione um tamanho!');
       return;
     }
-    onAddToCart(product, selectedSize, selectedColor, quantity);
+
+    alert(`✅ Adicionado ao carrinho!\n\n` +
+      `${product.nome}\n` +
+      `Tamanho: ${selectedSize}\n` +
+      `Cor: ${selectedColor}\n` +
+      `Quantidade: ${quantity}`);
   };
 
   return (
     <div className="product-info">
-      {/* Breadcrumb */}
-      <div className="breadcrumb">
-        Início &gt; {product.categoria} &gt; {product.nome}
-      </div>
+      <div className="breadcrumb">Início &gt; {product.categoria}</div>
 
       <h1 className="product-title">{product.nome}</h1>
 
@@ -33,18 +34,15 @@ export default function ProductInfo({ product, onAddToCart }: Props) {
         Marca: <strong>{product.marca}</strong> • Código: {product.id.toString().padStart(6, '0')}
       </div>
 
-      <div className="rating">★★★★☆ {product.avaliacao} (Avaliações)</div>
+      <div className="rating">★★★★☆ {product.avaliacao}</div>
 
-      {/* Preço */}
+      {/* Preços */}
       <div className="price-section">
         {product.precoAntigo && (
           <span className="old-price">R$ {product.precoAntigo.toFixed(2)}</span>
         )}
         <span className="current-price">R$ {product.preco.toFixed(2)}</span>
-        
-        <div className="pix-price">
-          ou R$ {(product.preco * 0.9).toFixed(2)} no PIX (10% OFF)
-        </div>
+        <div className="pix-price">ou R$ {(product.preco * 0.9).toFixed(2)} no PIX (10% OFF)</div>
         <div className="installments">{product.parcelas}</div>
       </div>
 
@@ -65,7 +63,7 @@ export default function ProductInfo({ product, onAddToCart }: Props) {
 
       {/* Tamanhos */}
       <div className="option-group">
-        <label>Tamanho: <span className="selected-size">{selectedSize || '—'}</span></label>
+        <label>Tamanho: <span className="selected-size">{selectedSize || 'Selecione'}</span></label>
         <div className="size-options">
           {product.tamanhos.map((tam: string) => (
             <button
@@ -79,7 +77,7 @@ export default function ProductInfo({ product, onAddToCart }: Props) {
         </div>
       </div>
 
-      {/* Quantidade e Comprar */}
+      {/* Quantidade + Comprar */}
       <div className="buy-section">
         <div className="quantity-selector">
           <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
@@ -93,11 +91,17 @@ export default function ProductInfo({ product, onAddToCart }: Props) {
       </div>
 
       {/* Frete */}
+      {/* Frete - Mais parecido com o site real */}
       <div className="shipping-section">
-        <h4>Meios de Envio</h4>
+        <h4>🚚 Meios de Envio</h4>
         <div className="cep-box">
-          <input type="text" placeholder="Digite seu CEP" maxLength={8} />
-          <button>CALCULAR</button>
+          <input
+            type="text"
+            placeholder="Seu CEP"
+            maxLength={8}
+            className="cep-input"
+          />
+          <button type="button" className="calculate-btn">CALCULAR</button>
         </div>
         <a href="#" className="cep-link">Não sei meu CEP</a>
       </div>

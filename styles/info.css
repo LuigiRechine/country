@@ -132,7 +132,7 @@
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  min-width: 200px;
+  min-width: 0;
 }
 
 .shipping-section h4 {
@@ -141,7 +141,84 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .product-title { font-size: 1.6rem; }
-  .current-price { font-size: 1.9rem; }
-  .buy-section { flex-direction: column; align-items: stretch; }
+  .product-title {
+    font-size: 1.6rem;
+  }
+
+  .current-price {
+    font-size: 1.9rem;
+  }
+
+  .buy-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buy-btn {
+    width: 100%;
+  }
+
+  .cep-box {
+    flex-direction: column;
+  }
+
+  .cep-input,
+  .calculate-btn {
+    width: 100%;
+  }
+
+  .calculate-btn {
+    padding: 14px;
+  }
+}
+
+.shipping-section {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.shipping-section h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+}
+
+.cep-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cep-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.calculate-btn {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cep-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.cep-link:hover {
+  color: #004499;
+}
+
+/* Ajustes gerais no ProductInfo */
+.option-group {
+  margin-bottom: 20px;
 }

@@ -12,14 +12,14 @@ interface Category {
 }
 
 const categorias: Category[] = [
-  { id: 1, nome: 'Botas',     imagem: '/botas.png',     href: '/botas' },
-  { id: 2, nome: 'Chapéus',   imagem: '/chapeus.png',   href: '/chapeus' },
-  { id: 3, nome: 'Camisas',   imagem: '/camisas.png',   href: '/camisas' },
-  { id: 4, nome: 'Calças',    imagem: '/botas.png',    href: '/calcas' },
-  { id: 5, nome: 'Cintos',    imagem: '/chapeus.png',    href: '/cintos' },
-  { id: 6, nome: 'Acessorios',    imagem: '/chapeus.png',    href: '/acessorios' },
-  { id: 7, nome: 'Feminino',  imagem: '/camisas.png',  href: '/feminino' },
-  { id: 8, nome: 'Masculino', imagem: '/botas.png', href: '/masculino' },
+  { id: 1, nome: 'Botas',     imagem: '/botas.png',     href: '/produtos?categoria=Botas' },
+  { id: 2, nome: 'Chapéus',   imagem: '/chapeus.png',   href: '/produtos?categoria=Chapéus' },
+  { id: 3, nome: 'Camisas',   imagem: '/camisas.png',   href: '/produtos?categoria=Camisas' },
+  { id: 4, nome: 'Calças',    imagem: '/calcas.jpg',    href: '/produtos?categoria=Calças' },
+  { id: 5, nome: 'Cintos',    imagem: '/cintos.png',    href: '/produtos?categoria=Cintos' },
+  { id: 6, nome: 'Acessorios',    imagem: '/acessorios.png',    href: '/produtos?categoria=Acessórios' },
+  { id: 7, nome: 'Feminino',  imagem: '/feminino.jpg',  href: '/produtos?genero=Feminino' },
+  { id: 8, nome: 'Masculino', imagem: '/masculino.jpg', href: '/produtos?genero=Masculino' },
 ];
 
 export default function Categories() {
