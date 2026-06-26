@@ -1,0 +1,252 @@
+/* MenProducts.css — Estação Country */
+
+.men-section {
+  background: #EFEBE9;
+  padding: 96px 0 104px;
+}
+
+.men-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Cabeçalho (invertido: botão à esquerda, texto à direita) ── */
+.men-header {
+  flex-direction: row-reverse; /* espelha o layout feminino */
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.gender-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* alinha à direita para espelhar */
+  gap: 0;
+}
+
+.men-eyebrow {
+  /* herda .section-eyebrow de WomenProducts.css;
+     aqui apenas garante alinhamento */
+  justify-content: flex-end;
+}
+
+.men-title {
+  text-align: right;
+}
+
+.men-subtitle {
+  text-align: right;
+  max-width: 480px;
+}
+
+/* Botão "Ver Todos" masculino */
+.men-ver-todos {
+  align-self: center;
+}
+
+/* ─── Layout invertido (grid à esquerda, banner à direita) ── */
+.men-layout {
+  grid-template-columns: 1fr 260px;
+}
+
+/* Banner masculino */
+.gender-banner--men {
+  background-color: #2C1F14;
+  background-image: url('/banners/masculino-banner.jpg');
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .men-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .men-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gender-header-right {
+    align-items: flex-start;
+  }
+
+  .men-title,
+  .men-subtitle {
+    text-align: left;
+  }
+
+  .men-eyebrow {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .men-section {
+    padding: 64px 0 72px;
+  }
+}
+
+/* ─── Classes compartilhadas reutilizadas de WomenProducts ──
+   (copie para um arquivo base se preferir centralizar) ────── */
+
+.gender-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.gender-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #C9A227;
+}
+
+.eyebrow-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+}
+
+.gender-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #3E2723;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+
+.gender-subtitle {
+  font-size: 1.05rem;
+  color: #5D4037;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ver-todos-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 2px solid #3E2723;
+  border-radius: 6px;
+  color: #3E2723;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ver-todos-btn:hover {
+  background: #C9A227;
+  border-color: #C9A227;
+  color: #3E2723;
+}
+
+.ver-todos-arrow {
+  transition: transform 0.3s ease;
+}
+
+.ver-todos-btn:hover .ver-todos-arrow {
+  transform: translateX(4px);
+}
+
+.gender-layout {
+  display: grid;
+  gap: 28px;
+  align-items: start;
+}
+
+.gender-banner {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 560px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.gender-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 10, 5, 0.85) 0%,
+    rgba(20, 10, 5, 0.3) 60%,
+    transparent 100%
+  );
+}
+
+.gender-banner-content {
+  position: absolute;
+  bottom: 28px;
+  left: 24px;
+  right: 24px;
+  z-index: 2;
+}
+
+.gender-banner-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin: 0 0 6px;
+}
+
+.gender-banner-text {
+  font-family: 'Georgia', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #EFEBE9;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.gender-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .gender-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gender-banner {
+    min-height: 200px;
+    height: 200px;
+  }
+
+  .gender-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

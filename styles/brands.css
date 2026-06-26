@@ -1,0 +1,183 @@
+/* brands.css — Estação Country */
+
+/* ─── Seção ──────────────────────────────────────────────── */
+.brands-section {
+  background: #ffffff;
+  padding: 88px 0 96px;
+  overflow: hidden;
+}
+
+.brands-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ─── Cabeçalho ──────────────────────────────────────────── */
+.brands-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.brands-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.brands-eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #C9A227;
+}
+
+.brands-eyebrow-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+}
+
+.brands-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #3E2723;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px;
+}
+
+.brands-subtitle {
+  font-size: 1.05rem;
+  color: #5D4037;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── Carrossel ──────────────────────────────────────────── */
+.brands-track-wrapper {
+  /* mascara as bordas com fade lateral */
+  position: relative;
+}
+
+.brands-track-wrapper::before,
+.brands-track-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brands-track-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #EFEBE9, transparent);
+}
+
+.brands-track-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #EFEBE9, transparent);
+}
+
+/* trilho que contém os dois conjuntos de logos (loop infinito) */
+.brands-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+
+  /* animação infinita — duração controla velocidade */
+  animation: brands-scroll 32s linear infinite;
+}
+
+.brands-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brands-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Card individual ────────────────────────────────────── */
+.brand-card {
+  background: #ffffff;
+  border: 1.5px solid #E5D9C8;
+  border-radius: 12px;
+  width: 180px;
+  height: 110px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(62, 39, 35, 0.06);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.brand-card:hover {
+  border-color: #C9A227;
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+  transform: translateY(-4px);
+}
+
+.brand-logo {
+  height: 90px;
+  width: 130px;
+  object-fit: contain;
+  filter: grayscale(40%) opacity(0.75);
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.brand-card:hover .brand-logo {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.06);
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .brands-section {
+    padding: 64px 0 72px;
+  }
+
+  .brands-container {
+    padding: 0 0; /* o fade lateral cobre as bordas */
+  }
+
+  .brands-track-wrapper::before,
+  .brands-track-wrapper::after {
+    width: 48px;
+  }
+
+  .brand-card {
+    width: 140px;
+    height: 90px;
+    padding: 16px 18px;
+  }
+
+  .brand-logo {
+    max-height: 48px;
+    max-width: 100px;
+  }
+
+  .brands-track {
+    animation-duration: 22s;
+  }
+}
+
+/* Respeita preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .brands-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}

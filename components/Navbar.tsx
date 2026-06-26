@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, Search, User, ShoppingCart } from 'lucide-react';
-import '@/styles/navbar.css'
+import Image from "next/image";
+import '@/styles/navbar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,15 +23,17 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
+
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-amber-900 rounded-full flex items-center justify-center border-2 border-[#D4A017]">
-                🤠
-              </div>
-              <div>
-                <span className="nav-logo">COUNTRY</span>
-                <span className="text-[#D4A017] text-sm font-bold tracking-widest block -mt-1">STORE</span>
-              </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Estação Country"
+                width={170}
+                height={65}
+                priority
+                className="navbar-logo"
+              />
             </Link>
 
             {/* Desktop Menu */}
@@ -48,7 +51,8 @@ export default function Navbar() {
 
             {/* Right Side Icons */}
             <div className="flex items-center gap-4">
-              {/* Search */}
+
+              {/* Search - Desktop */}
               <div className="relative hidden sm:block">
                 <input
                   type="text"
@@ -71,10 +75,11 @@ export default function Navbar() {
                 </span>
               </Link>
 
-              {/* Hamburger Menu */}
+              {/* Hamburger - aria-label adicionado para acessibilidade */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden text-[#EDE4D5] p-2"
+                aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
               >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -96,14 +101,15 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              
-              {/* Search Mobile */}
-              <div className="pt-4">
+
+              {/* Search Mobile - ícone adicionado */}
+              <div className="relative pt-4">
                 <input
                   type="text"
                   placeholder="Buscar produtos..."
-                  className="search-input w-full pl-10 pr-4 py-3 rounded-full"
+                  className="search-input w-full pl-10 pr-4 py-3 rounded-full focus:outline-none"
                 />
+                <Search className="absolute left-4 top-7 text-[#D4A017]" size={20} />
               </div>
             </div>
           </div>

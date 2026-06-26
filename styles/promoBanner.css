@@ -1,0 +1,92 @@
+/* PromoBanner.css */
+.promo-banner {
+  background-color: #3E2723;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/promoBanner.png'); /* Coloque uma imagem country aqui */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.promo-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.promo-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.promo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.promo-item:hover {
+  transform: translateY(-8px);
+}
+
+.promo-icon {
+  width: 68px;
+  height: 68px;
+  background: #C9A227;
+  color: #3E2723;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
+  transition: all 0.4s ease;
+}
+
+.promo-item:hover .promo-icon {
+  transform: scale(1.1);
+  background: #EFEBE9;
+}
+
+.promo-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.35rem;
+  color: #EFEBE9;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.promo-description {
+  color: #D7CCC8;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .promo-banner {
+    padding: 50px 0;
+  }
+  
+  .promo-content {
+    gap: 32px;
+  }
+  
+  .promo-item {
+    padding: 0 10px;
+  }
+}

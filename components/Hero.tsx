@@ -6,12 +6,21 @@ import '@/styles/hero.css';
 
 export default function Hero() {
   return (
-    <section 
-      className="hero"
-      style={{
-        backgroundImage: "url('/hero.jpg')" // Use a imagem que eu gerei anteriormente
-      }}
-    >
+    <section className="hero">
+
+      {/* Imagem de fundo via Next.js Image (otimizada: lazy load, WebP automático) */}
+      <Image
+        src="/hero.jpg"
+        alt="Estação Country - Coleção 2026"
+        fill
+        priority
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
+        className="hero-bg-image"
+      />
+
+      {/* Overlay escuro */}
+      <div className="hero-overlay" />
+
       <div className="hero-content">
 
         {/* Badge */}
@@ -30,15 +39,13 @@ export default function Hero() {
           As melhores marcas nacionais e importadas.
         </p>
 
-        {/* Botão CTA */}
-        <Link href="/colecao">
-          <button className="hero-button">
-            EXPLORAR COLEÇÃO AGORA
-          </button>
+        {/* Botão CTA — Link estilizado diretamente, sem <button> aninhado */}
+        <Link href="/colecao" className="hero-button">
+          EXPLORAR COLEÇÃO AGORA
         </Link>
 
         {/* Benefícios */}
-        <p className="mt-8 text-[#D7CCC8] text-sm flex items-center gap-6">
+        <p className="hero-benefits">
           <span>✓ Frete Grátis acima de R$ 399</span>
           <span>✓ Parcelamento em até 6x</span>
         </p>
