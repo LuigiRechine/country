@@ -1,0 +1,147 @@
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.breadcrumb {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.product-title {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #222;
+}
+
+.brand-info {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.rating {
+  color: #D4A017;
+  font-size: 1.1rem;
+}
+
+.price-section {
+  margin: 10px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.current-price {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #8B4513;
+}
+
+.pix-price {
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+.installments {
+  color: #555;
+  margin-top: 4px;
+}
+
+.option-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.color-options {
+  display: flex;
+  gap: 14px;
+}
+
+.color-dot {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #ddd;
+  cursor: pointer;
+}
+
+.color-dot.selected {
+  box-shadow: 0 0 0 4px #8B4513;
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.size-btn {
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.size-btn.selected,
+.size-btn:hover {
+  border-color: #8B4513;
+  background: #8B4513;
+  color: white;
+}
+
+.buy-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.quantity-selector button {
+  width: 36px;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-btn {
+  flex: 1;
+  background: #28A745;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.shipping-section h4 {
+  margin: 20px 0 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .product-title { font-size: 1.6rem; }
+  .current-price { font-size: 1.9rem; }
+  .buy-section { flex-direction: column; align-items: stretch; }
+}
