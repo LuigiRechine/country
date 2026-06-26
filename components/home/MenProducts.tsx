@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import ProductCard, { type Product } from '@/components/ProductCard';
+import ProductCard, { type Product } from '@/components/products/ProductCard';
 import '@/styles/MenProducts.css';
 
 const menProducts: Product[] = [

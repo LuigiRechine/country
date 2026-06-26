@@ -1,15 +1,15 @@
-import Navbar          from '@/components/Navbar';
-import Hero            from '@/components/Hero';
-import Categories      from '@/components/Categories';
-import Brands          from '@/components/Brands';
-import FeaturedProducts from '@/components/FeaturedProducts';
-import PromoBanner     from '@/components/PromoBanner';
-import WomenProducts   from '@/components/WomenProducts';
-import MenProducts     from '@/components/MenProducts';
-import AboutStore      from '@/components/AboutStore';
+import Navbar          from '@/components/layout/Navbar';
+import Hero            from '@/components/home/Hero';
+import Categories      from '@/components/home/Categories';
+import Brands          from '@/components/home/Brands';
+import FeaturedProducts from '@/components/home/FeaturedProducts';
+import PromoBanner     from '@/components/home/PromoBanner';
+import WomenProducts   from '@/components/home/WomenProducts';
+import MenProducts     from '@/components/home/MenProducts';
+import AboutStore      from '@/components/home/AboutStore';
 import TrustSection    from '@/components/TrustSection';
-import Footer          from '@/components/Footer';
-import WhatsAppButton  from '@/components/WhatsAppButton';
+import Footer          from '@/components/layout/Footer';
+import WhatsAppButton  from '@/components/layout/WhatsAppButton';
 
 export default function Home() {
   return (

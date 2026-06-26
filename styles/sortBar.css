@@ -1,0 +1,65 @@
+/* sortBar.css */
+.sort-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 20px;
+  border-bottom: 1.5px solid #EDE4D5;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.sort-bar-count {
+  font-size: 0.9rem;
+  color: #5D4037;
+  margin: 0;
+}
+.sort-bar-count strong { color: #3E2723; }
+.sort-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sort-bar-filter-btn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border: 1.5px solid #3E2723;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #3E2723;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.sort-bar-filter-btn:hover { background: #3E2723; color: #EFEBE9; }
+.sort-bar-label {
+  font-size: 0.85rem;
+  color: #5D4037;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.sort-bar-select-wrap { display: flex; align-items: center; gap: 8px; }
+.sort-bar-select {
+  padding: 9px 36px 9px 14px;
+  border: 1.5px solid #EDE4D5;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 0.88rem;
+  color: #3E2723;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%235D4037' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  transition: border-color 0.2s;
+}
+.sort-bar-select:focus { outline: none; border-color: #C9A227; }
+
+@media (max-width: 900px) {
+  .sort-bar-filter-btn { display: flex; }
+}

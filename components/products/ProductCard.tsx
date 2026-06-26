@@ -1,29 +1,20 @@
 'use client';
 
-import Image from 'next/image';
-import { Heart } from 'lucide-react';
-import '@/styles/productCard.css';
+// components/products/ProductCard.tsx
+// Este componente é idêntico ao da Home, mas linka para /produtos/[id].
+// Futuramente, unifique os dois em um único componente em components/shared/.
 
-export type Product = {
-  id: number;
-  nome: string;
-  marca: string;
-  preco: number;
-  precoAntigo?: number;
-  parcelas: string;
-  avaliacao: number;
-  imagem: string;
-  destaque?: 'Novo' | 'Mais Vendido' | 'Oferta';
-  cores: string[];
-};
+import Image from 'next/image';
+import Link from 'next/link';
+import { Heart } from 'lucide-react';
+import type { Product } from '@/types/product';
+import '@/styles/productCard.css';
 
 interface ProductCardProps {
   product: Product;
-  onFavorite?: (id: number) => void;
-  onViewProduct?: (id: number) => void;
 }
 
-export default function ProductCard({ product, onFavorite, onViewProduct }: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const tagClass = product.destaque
     ? `tag tag-${product.destaque.toLowerCase().replace(/\s+/g, '-')}`
     : '';
@@ -36,25 +27,21 @@ export default function ProductCard({ product, onFavorite, onViewProduct }: Prod
   const estrelasVazias = 5 - estrelasCheias;
 
   return (
-    <div className="pc-card">
+    <article className="pc-card">
       {/* Imagem */}
       <div className="pc-image-wrap">
         {product.destaque && (
           <span className={tagClass}>{product.destaque}</span>
         )}
-
         {desconto && (
           <span className="pc-desconto">-{desconto}%</span>
         )}
-
         <button
           className="pc-fav-btn"
           aria-label="Adicionar aos favoritos"
-          onClick={() => onFavorite?.(product.id)}
         >
           <Heart size={18} />
         </button>
-
         <Image
           src={product.imagem}
           alt={product.nome}
@@ -69,7 +56,6 @@ export default function ProductCard({ product, onFavorite, onViewProduct }: Prod
         <p className="pc-marca">{product.marca}</p>
         <h3 className="pc-nome">{product.nome}</h3>
 
-        {/* Avaliação */}
         <div className="pc-rating">
           <span className="pc-stars" aria-label={`${product.avaliacao} de 5 estrelas`}>
             {'★'.repeat(estrelasCheias)}{'☆'.repeat(estrelasVazias)}
@@ -77,7 +63,6 @@ export default function ProductCard({ product, onFavorite, onViewProduct }: Prod
           <span className="pc-rating-num">{product.avaliacao}</span>
         </div>
 
-        {/* Preço */}
         <div className="pc-preco-wrap">
           <span className="pc-preco">
             R$ {product.preco.toFixed(2).replace('.', ',')}
@@ -91,10 +76,9 @@ export default function ProductCard({ product, onFavorite, onViewProduct }: Prod
 
         <p className="pc-parcelas">{product.parcelas}</p>
 
-        {/* Cores */}
         <div className="pc-cores" aria-label="Cores disponíveis">
           {product.cores.map((cor, i) => (
-            <button
+            <span
               key={i}
               className="pc-cor"
               style={{ backgroundColor: cor }}
@@ -103,13 +87,10 @@ export default function ProductCard({ product, onFavorite, onViewProduct }: Prod
           ))}
         </div>
 
-        <button
-          className="pc-btn"
-          onClick={() => onViewProduct?.(product.id)}
-        >
+        <Link href={`/produtos/${product.id}`} className="pc-btn">
           Ver Produto
-        </button>
+        </Link>
       </div>
-    </div>
+    </article>
   );
 }

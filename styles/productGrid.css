@@ -1,0 +1,28 @@
+/* productGrid.css */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.product-grid-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 0;
+}
+.product-grid-empty-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  color: #3E2723;
+  margin: 0 0 8px;
+}
+.product-grid-empty-sub {
+  font-size: 0.95rem;
+  color: #5D4037;
+  margin: 0;
+}
+@media (max-width: 1200px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .product-grid { grid-template-columns: 1fr; }
+}

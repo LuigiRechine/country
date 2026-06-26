@@ -1,0 +1,77 @@
+/* productsPage.css */
+
+.products-page {
+  background: #EFEBE9;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.products-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ─── Cabeçalho ──────────────────────────────────────────── */
+.products-page-header {
+  padding: 36px 0 40px;
+  border-bottom: 1.5px solid #DDD3C8;
+  margin-bottom: 40px;
+}
+
+.products-page-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #3E2723;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px;
+}
+
+.products-page-subtitle {
+  font-size: 1.05rem;
+  color: #5D4037;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── Layout principal ───────────────────────────────────── */
+.products-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.products-main {
+  flex: 1;
+  min-width: 0; /* evita overflow em grids */
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .products-page-container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .products-layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .products-page-header {
+    padding: 24px 0 28px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-page-container {
+    padding: 0 16px;
+  }
+
+  .products-page-header {
+    padding: 20px 0 24px;
+  }
+}

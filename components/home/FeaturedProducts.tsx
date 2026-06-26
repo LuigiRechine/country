@@ -1,6 +1,6 @@
 'use client';
 
-import ProductCard, { type Product } from '@/components/ProductCard';
+import ProductCard, { type Product } from '@/components/products/ProductCard';
 import '@/styles/featuredProducts.css';
 
 const featuredProducts: Product[] = [
