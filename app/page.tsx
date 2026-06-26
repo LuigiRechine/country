@@ -7,7 +7,6 @@ import PromoBanner     from '@/components/home/PromoBanner';
 import WomenProducts   from '@/components/home/WomenProducts';
 import MenProducts     from '@/components/home/MenProducts';
 import AboutStore      from '@/components/home/AboutStore';
-import TrustSection    from '@/components/TrustSection';
 import Footer          from '@/components/layout/Footer';
 import WhatsAppButton  from '@/components/layout/WhatsAppButton';
 

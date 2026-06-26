@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import ProductCard, { type Product } from '@/components/products/ProductCard';
+import ProductCard from '@/components/products/ProductCard';
+import type { Product } from '@/types/product';
 import '@/styles/MenProducts.css';
 
 const menProducts: Product[] = [
@@ -9,47 +10,63 @@ const menProducts: Product[] = [
     id: 201,
     nome: 'Bota Texana Masculina Couro',
     marca: 'Bota Gringa',
+    categoria: 'Botas',
+    genero: 'Masculino',
     preco: 549.90,
     precoAntigo: 619.90,
     parcelas: '12x de R$ 45,82',
     avaliacao: 4.9,
-    imagem: '/produtos/masculino/bota-couro-masculina.jpg',
+    imagens: ['/produtos/masculino/bota-couro-masculina.jpg'],
     destaque: 'Mais Vendido',
     cores: ['#3B1F0A', '#000000', '#8B4513'],
+    tamanhos: ['39', '40', '41', '42', '43', '44'],
+    descricaoCurta: 'Bota de couro legítimo com solado de borracha. Alta durabilidade e conforto.',
   },
   {
     id: 202,
     nome: 'Chapéu Felt Masculino',
     marca: 'Stetson',
+    categoria: 'Chapéus',
+    genero: 'Masculino',
     preco: 319.90,
     precoAntigo: 359.90,
     parcelas: '10x de R$ 31,99',
     avaliacao: 4.8,
-    imagem: '/produtos/masculino/chapeu-felt.webp',
+    imagens: ['/produtos/masculino/chapeu-felt.webp'],
     destaque: 'Novo',
     cores: ['#2C2C2C', '#704214', '#D2B48C'],
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    descricaoCurta: 'Chapéu de felt importado com aba larga e acabamento premium.',
   },
   {
     id: 203,
     nome: 'Camisa Xadrez Slim Country',
     marca: 'Ariat',
+    categoria: 'Camisas',
+    genero: 'Masculino',
     preco: 199.90,
     parcelas: '6x de R$ 33,32',
     avaliacao: 4.7,
-    imagem: '/produtos/masculino/camisa-xadrez-slim.webp',
+    imagens: ['/produtos/masculino/camisa-xadrez-slim.webp'],
     cores: ['#8B0000', '#003366', '#006400'],
+    tamanhos: ['P', 'M', 'G', 'GG', 'XGG'],
+    descricaoCurta: 'Camisa xadrez slim fit, tecido resistente com fechamento em botões de pérola.',
   },
   {
     id: 204,
     nome: 'Cinto Couro Rodeio Fivela',
     marca: 'Wrangler',
+    categoria: 'Cintos',
+    genero: 'Masculino',
     preco: 179.90,
     precoAntigo: 209.90,
     parcelas: '6x de R$ 29,98',
     avaliacao: 4.6,
-    imagem: '/produtos/masculino/cinto-rodeio.webp',
+    imagens: ['/produtos/masculino/cinto-rodeio.webp'],
     destaque: 'Oferta',
     cores: ['#3B1F0A', '#000000'],
+    tamanhos: ['38', '40', '42', '44', '46'],
+    descricaoCurta: 'Cinto de couro legítimo com fivela estilo rodeio banhada a ouro.',
   },
 ];
 

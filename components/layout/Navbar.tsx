@@ -11,10 +11,10 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Masculino', href: '/masculino' },
-    { name: 'Feminino', href: '/feminino' },
-    { name: 'Botas', href: '/botas' },
-    { name: 'Acessórios', href: '/acessorios' },
+    { name: 'Produtos', href: '/produtos' },
+    { name: 'Masculino', href: '/produtos?genero=Masculino' },   // ← era /masculino
+    { name: 'Feminino', href: '/produtos?genero=Feminino' },    // ← era /feminino
+    { name: 'Acessórios', href: '/produtos?categoria=Acessórios' }, // ← era /acessorios
     { name: 'Contato', href: '/contato' },
   ];
 

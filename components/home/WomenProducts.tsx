@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import ProductCard, { type Product } from '@/components/products/ProductCard';
+import ProductCard from '@/components/products/ProductCard';
+import type { Product } from '@/types/product';
 import '@/styles/WomenProducts.css';
 
 const womenProducts: Product[] = [
@@ -9,47 +10,63 @@ const womenProducts: Product[] = [
     id: 101,
     nome: 'Bota Texas Feminina',
     marca: 'Wrangler',
+    categoria: 'Botas',
+    genero: 'Feminino',
     preco: 389.90,
     precoAntigo: 429.90,
     parcelas: '10x de R$ 38,99',
     avaliacao: 4.9,
-    imagem: '/produtos/feminino/bota-texas-feminina.webp',
+    imagens: ['/produtos/feminino/bota-texas-feminina.webp'],
     destaque: 'Mais Vendido',
     cores: ['#4E342E', '#000000', '#8B4513'],
+    tamanhos: ['34', '35', '36', '37', '38', '39'],
+    descricaoCurta: 'Bota feminina estilo Texas com bordado artesanal e salto quadrado.',
   },
   {
     id: 102,
     nome: 'Chapéu Country Feminino',
     marca: 'Resistol',
+    categoria: 'Chapéus',
+    genero: 'Feminino',
     preco: 259.90,
     precoAntigo: 299.90,
     parcelas: '8x de R$ 32,49',
     avaliacao: 4.8,
-    imagem: '/produtos/feminino/chapeu-feminino.webp',
+    imagens: ['/produtos/feminino/chapeu-feminino.webp'],
     destaque: 'Novo',
     cores: ['#D2B48C', '#F5F5DC', '#8B4513'],
+    tamanhos: ['P', 'M', 'G'],
+    descricaoCurta: 'Chapéu de palha natural com laço decorativo e acabamento artesanal.',
   },
   {
     id: 103,
     nome: 'Blusa Floral Western',
     marca: 'Wrangler',
+    categoria: 'Camisas',
+    genero: 'Feminino',
     preco: 149.90,
     parcelas: '5x de R$ 29,98',
     avaliacao: 4.7,
-    imagem: '/produtos/feminino/blusa-floral.webp',
+    imagens: ['/produtos/feminino/blusa-floral.webp'],
     cores: ['#8B0000', '#E8DABD', '#4B2E1A'],
+    tamanhos: ['PP', 'P', 'M', 'G', 'GG'],
+    descricaoCurta: 'Blusa feminina com estampa floral e detalhes western.',
   },
   {
     id: 104,
     nome: 'Calça Jeans Feminina Country',
     marca: 'Ariat',
+    categoria: 'Calças',
+    genero: 'Feminino',
     preco: 249.90,
     precoAntigo: 289.90,
     parcelas: '8x de R$ 31,24',
     avaliacao: 4.8,
-    imagem: '/produtos/feminino/calca-jeans-feminina.webp',
+    imagens: ['/produtos/feminino/calca-jeans-feminina.webp'],
     destaque: 'Oferta',
     cores: ['#1E3A8A', '#2C2C2C', '#5C4033'],
+    tamanhos: ['34', '36', '38', '40', '42', '44'],
+    descricaoCurta: 'Calça jeans feminina de cintura alta com strass e bordado floral.',
   },
 ];
 

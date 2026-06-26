@@ -1,11 +1,9 @@
 'use client';
 
 // app/produtos/page.tsx
-// Ponto de entrada da listagem de produtos.
-// Ao integrar com o Spring Boot, substitua o import de `products`
-// por uma chamada ao serviço: const products = await productService.getAll(filters);
 
 import { useState, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';    // ← novo
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
@@ -22,14 +20,23 @@ const PRODUCTS_PER_PAGE = 8;
 
 const INITIAL_FILTERS: ProductFilters = {
   categorias: [],
+  generos: [],
+
   marcas: [],
+
   precoMin: 0,
   precoMax: 2000,
+
   cores: [],
   tamanhos: [],
 };
 
 export default function ProdutosPage() {
+  const searchParams = useSearchParams();                    // ← novo
+  const generoParam = searchParams.get('genero');         // ← novo
+  const categoriaParam = searchParams.get('categoria');     // ← novo
+  const marcaParam = searchParams.get('marca');          // ← novo
+
   const [filters, setFilters] = useState<ProductFilters>(INITIAL_FILTERS);
   const [sort, setSort] = useState<SortOption>('mais-vendidos');
   const [page, setPage] = useState(1);
@@ -38,28 +45,45 @@ export default function ProdutosPage() {
   // ── Filtragem ──────────────────────────────────────────────────────────────
   const filtered = useMemo(() => {
     return allProducts.filter((p) => {
+      // Filtros da URL (Navbar)
+      if (generoParam && p.genero !== generoParam) return false;       // ← novo
+      if (categoriaParam && p.categoria !== categoriaParam) return false; // ← novo
+      if (marcaParam && p.marca !== marcaParam) return false;          // ← novo
+
+      if (filters.generos.length > 0 && !filters.generos.includes(p.genero)) return false;
+
+      // Filtros da sidebar
       if (filters.categorias.length > 0 && !filters.categorias.includes(p.categoria)) return false;
       if (filters.marcas.length > 0 && !filters.marcas.includes(p.marca)) return false;
       if (p.preco > filters.precoMax) return false;
       if (filters.cores.length > 0 && !p.cores.some((c) => filters.cores.includes(c))) return false;
+      if (filters.tamanhos.length > 0 && !p.tamanhos.some((t) => filters.tamanhos.includes(t))) return false; // ← novo
       return true;
     });
-  }, [filters]);
+  }, [filters, generoParam, categoriaParam, marcaParam]);
+
+  // ── Título dinâmico baseado na URL ─────────────────────────────────────────
+  const pageTitle = useMemo(() => {                                    // ← novo
+    if (generoParam && categoriaParam) return `${categoriaParam} ${generoParam}`;
+    if (generoParam) return `Produtos ${generoParam}`;
+    if (categoriaParam) return categoriaParam;
+    return 'Todos os Produtos';
+  }, [generoParam, categoriaParam]);
 
   // ── Ordenação ──────────────────────────────────────────────────────────────
   const sorted = useMemo(() => {
     const arr = [...filtered];
     switch (sort) {
-      case 'menor-preco':    return arr.sort((a, b) => a.preco - b.preco);
-      case 'maior-preco':    return arr.sort((a, b) => b.preco - a.preco);
-      case 'mais-recentes':  return arr.sort((a, b) => b.id - a.id);
+      case 'menor-preco': return arr.sort((a, b) => a.preco - b.preco);
+      case 'maior-preco': return arr.sort((a, b) => b.preco - a.preco);
+      case 'mais-recentes': return arr.sort((a, b) => b.id - a.id);
       case 'maior-desconto': return arr.sort((a, b) => {
         const da = a.precoAntigo ? ((a.precoAntigo - a.preco) / a.precoAntigo) : 0;
         const db = b.precoAntigo ? ((b.precoAntigo - b.preco) / b.precoAntigo) : 0;
         return db - da;
       });
-      case 'a-z':            return arr.sort((a, b) => a.nome.localeCompare(b.nome));
-      default:               return arr.sort((a, b) => b.avaliacao - a.avaliacao);
+      case 'a-z': return arr.sort((a, b) => a.nome.localeCompare(b.nome));
+      default: return arr.sort((a, b) => b.avaliacao - a.avaliacao);
     }
   }, [filtered, sort]);
 
@@ -84,7 +108,6 @@ export default function ProdutosPage() {
       <main className="products-page">
         <div className="products-page-container">
 
-          {/* Breadcrumb */}
           <Breadcrumb
             items={[
               { label: 'Home', href: '/' },
@@ -92,17 +115,14 @@ export default function ProdutosPage() {
             ]}
           />
 
-          {/* Cabeçalho da página */}
           <header className="products-page-header">
-            <h1 className="products-page-title">Todos os Produtos</h1>
+            <h1 className="products-page-title">{pageTitle}</h1>  {/* ← dinâmico */}
             <p className="products-page-subtitle">
               Encontre botas, chapéus, roupas e acessórios das melhores marcas country.
             </p>
           </header>
 
-          {/* Área principal: sidebar + grid */}
           <div className="products-layout">
-
             <FilterSidebar
               filters={filters}
               onChange={handleFiltersChange}

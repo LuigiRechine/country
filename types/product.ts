@@ -1,29 +1,30 @@
 // types/product.ts
-// Interface central do produto — será reutilizada em toda a aplicação.
-// Ao integrar com o Spring Boot, basta apontar os campos para os da API.
- 
+
 export type ProductTag = 'Novo' | 'Oferta' | 'Mais Vendido';
- 
+
 export type ProductCategory =
   | 'Botas'
   | 'Chapéus'
   | 'Camisas'
   | 'Calças'
   | 'Cintos'
-  | 'Feminino'
-  | 'Masculino';
- 
+  | 'Acessórios';
+
+export type ProductGender = 'Masculino' | 'Feminino' | 'Unissex';
+
 export interface Product {
   id: number;
   nome: string;
   marca: string;
   categoria: ProductCategory;
+  genero: ProductGender;       // ← novo
   preco: number;
   precoAntigo?: number;
   parcelas: string;
   avaliacao: number;
-  imagem: string;
+  imagens: string[];           // ← era `imagem: string`
   cores: string[];
+  tamanhos: string[];          // ← novo (ex: ['37', '38', '39'] ou ['P', 'M', 'G'])
   destaque?: ProductTag;
   descricaoCurta: string;
 }

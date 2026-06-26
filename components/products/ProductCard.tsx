@@ -43,7 +43,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <Heart size={18} />
         </button>
         <Image
-          src={product.imagem}
+          src={product.imagens[0]}
           alt={product.nome}
           fill
           className="pc-image"

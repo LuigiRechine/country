@@ -3,24 +3,34 @@
 // components/products/FilterSidebar.tsx
 import { useState } from 'react';
 import type { ProductFilters } from '@/types/filters';
-import type { ProductCategory } from '@/types/product';
+import type { ProductCategory, ProductGender } from '@/types/product';
 import '@/styles/filterSidebar.css';
 
 const CATEGORIAS: ProductCategory[] = [
-  'Botas', 'Chapéus', 'Camisas', 'Calças', 'Cintos', 'Feminino', 'Masculino',
+  'Botas',
+  'Chapéus',
+  'Camisas',
+  'Calças',
+  'Cintos',
+];
+
+const GENEROS: ProductGender[] = [
+  'Masculino',
+  'Feminino',
+  'Unissex',
 ];
 
 const MARCAS = ['Wrangler', 'Ariat', "Dock's", 'Goyazes', "Levi's", 'West Dust'];
 
 const CORES = [
-  { label: 'Preto',    valor: '#000000' },
-  { label: 'Marrom',   valor: '#3B1F0A' },
+  { label: 'Preto', valor: '#000000' },
+  { label: 'Marrom', valor: '#3B1F0A' },
   { label: 'Caramelo', valor: '#C68642' },
-  { label: 'Azul',     valor: '#1E3A8A' },
-  { label: 'Branco',   valor: '#F5F5F5' },
+  { label: 'Azul', valor: '#1E3A8A' },
+  { label: 'Branco', valor: '#F5F5F5' },
 ];
 
-const TAMANHOS = ['34','35','36','37','38','39','40','41','42','43','44'];
+const TAMANHOS = ['34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44'];
 
 interface FilterSidebarProps {
   filters: ProductFilters;
@@ -37,6 +47,17 @@ export default function FilterSidebar({ filters, onChange, isOpen, onClose }: Fi
       ? filters.categorias.filter((c) => c !== cat)
       : [...filters.categorias, cat];
     onChange({ ...filters, categorias: next });
+  }
+
+  function toggleGenero(genero: ProductGender) {
+    const next = filters.generos.includes(genero)
+      ? filters.generos.filter((g) => g !== genero)
+      : [...filters.generos, genero];
+
+    onChange({
+      ...filters,
+      generos: next,
+    });
   }
 
   function toggleMarca(marca: string) {
@@ -67,7 +88,19 @@ export default function FilterSidebar({ filters, onChange, isOpen, onClose }: Fi
 
   function limparFiltros() {
     setPreco(2000);
-    onChange({ categorias: [], marcas: [], precoMin: 0, precoMax: 2000, cores: [], tamanhos: [] });
+
+    onChange({
+      categorias: [],
+      generos: [],
+
+      marcas: [],
+
+      precoMin: 0,
+      precoMax: 2000,
+
+      cores: [],
+      tamanhos: [],
+    });
   }
 
   return (
@@ -102,6 +135,31 @@ export default function FilterSidebar({ filters, onChange, isOpen, onClose }: Fi
                     className="filter-checkbox"
                   />
                   <span className="filter-radio-label">{cat}</span>
+                </label>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="filter-divider" />
+
+        <div className="filter-group">
+          <h3 className="filter-group-title">Público</h3>
+
+          <ul className="filter-radio-list">
+            {GENEROS.map((genero) => (
+              <li key={genero}>
+                <label className="filter-radio-item">
+                  <input
+                    type="checkbox"
+                    checked={filters.generos.includes(genero)}
+                    onChange={() => toggleGenero(genero)}
+                    className="filter-checkbox"
+                  />
+
+                  <span className="filter-radio-label">
+                    {genero}
+                  </span>
                 </label>
               </li>
             ))}

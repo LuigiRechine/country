@@ -1,17 +1,20 @@
 // types/filters.ts
-// Tipagem dos filtros da página de listagem.
- 
-import type { ProductCategory } from './product';
- 
+
+import type { ProductCategory, ProductGender } from './product';
+
 export interface ProductFilters {
   categorias: ProductCategory[];
+  generos: ProductGender[];
+
   marcas: string[];
+
   precoMin: number;
   precoMax: number;
+
   cores: string[];
   tamanhos: string[];
 }
- 
+
 export type SortOption =
   | 'mais-vendidos'
   | 'menor-preco'
@@ -19,4 +22,3 @@ export type SortOption =
   | 'mais-recentes'
   | 'maior-desconto'
   | 'a-z';
- 
