@@ -31,7 +31,9 @@ const INITIAL_FILTERS: ProductFilters = {
   tamanhos: [],
 };
 
+
 export default function ProdutosPage() {
+
   const searchParams = useSearchParams();                    // ← novo
   const generoParam = searchParams.get('genero');         // ← novo
   const categoriaParam = searchParams.get('categoria');     // ← novo
@@ -62,13 +64,16 @@ export default function ProdutosPage() {
     });
   }, [filters, generoParam, categoriaParam, marcaParam]);
 
+  const destaqueParam = searchParams.get('destaque');
+
   // ── Título dinâmico baseado na URL ─────────────────────────────────────────
-  const pageTitle = useMemo(() => {                                    // ← novo
+  const pageTitle = useMemo(() => {
+    if (destaqueParam === 'mais-vendidos') return 'Mais Vendidos';   // ← novo
     if (generoParam && categoriaParam) return `${categoriaParam} ${generoParam}`;
     if (generoParam) return `Produtos ${generoParam}`;
     if (categoriaParam) return categoriaParam;
     return 'Todos os Produtos';
-  }, [generoParam, categoriaParam]);
+  }, [destaqueParam, generoParam, categoriaParam]);
 
   // ── Ordenação ──────────────────────────────────────────────────────────────
   const sorted = useMemo(() => {

@@ -1,0 +1,241 @@
+/* contactSection.css — Estação Country */
+
+/* ─── Seção ──────────────────────────────────────────────── */
+.contact-section {
+  background: #EFEBE9;
+  padding: 80px 0 112px;
+  min-height: 70vh;
+}
+
+.contact-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ─── Eyebrow ────────────────────────────────────────────── */
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.contact-eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #C9A227;
+}
+
+.contact-eyebrow-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+}
+
+/* ─── Cabeçalho ──────────────────────────────────────────── */
+.contact-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: #3E2723;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px;
+}
+
+.contact-subtitle {
+  font-size: 1.05rem;
+  color: #5D4037;
+  line-height: 1.65;
+  margin: 0 0 48px;
+  max-width: 480px;
+}
+
+/* ─── Card ───────────────────────────────────────────────── */
+.contact-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid #EDE4D5;
+  border-radius: 18px;
+  padding: 40px 40px 36px;
+  box-shadow:
+    0 4px 16px rgba(62, 39, 35, 0.06),
+    0 1px 4px rgba(62, 39, 35, 0.04);
+  text-align: left;
+}
+
+/* ─── Cabeçalho do card ──────────────────────────────────── */
+.contact-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #EDE4D5;
+  margin-bottom: 28px;
+}
+
+.contact-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.contact-card-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3E2723;
+  margin: 0;
+}
+
+/* ─── Lista de contatos ──────────────────────────────────── */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #F5EFE8;
+  transition: background 0.2s;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+/* Ícone */
+.contact-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #EFEBE9;
+  border: 1px solid #E0D5CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5D4037;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+}
+
+.contact-item:hover .contact-item-icon {
+  background: #FDF8EF;
+  border-color: #C9A227;
+  color: #C9A227;
+}
+
+/* Corpo */
+.contact-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-item-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+}
+
+.contact-item-value {
+  font-size: 0.95rem;
+  color: #5D4037;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item-link {
+  text-decoration: none;
+  color: #5D4037;
+  transition: color 0.2s;
+}
+
+.contact-item-link:hover {
+  color: #C9A227;
+}
+
+/* ─── Redes sociais ──────────────────────────────────────── */
+.contact-socials-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28px;
+  margin-top: 4px;
+  border-top: 1px solid #EDE4D5;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-socials-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #A1887F;
+  letter-spacing: 0.3px;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #EFEBE9;
+  border: 1.5px solid #E0D5CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5D4037;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.2s;
+}
+
+.contact-social-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-social-btn:hover {
+  background: #3E2723;
+  border-color: #3E2723;
+  color: #EFEBE9;
+  transform: translateY(-2px);
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+@media (max-width: 520px) {
+  .contact-section {
+    padding: 56px 0 80px;
+  }
+
+  .contact-card {
+    padding: 28px 24px 28px;
+    border-radius: 14px;
+  }
+
+  .contact-socials-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

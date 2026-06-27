@@ -40,8 +40,8 @@ export default function Hero() {
         </p>
 
         {/* Botão CTA — Link estilizado diretamente, sem <button> aninhado */}
-        <Link href="/colecao" className="hero-button">
-          EXPLORAR COLEÇÃO AGORA
+        <Link href="/produtos?destaque=mais-vendidos" className="hero-button">
+          CONFERIR OS MAIS VENDIDOS
         </Link>
 
         {/* Benefícios */}
