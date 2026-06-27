@@ -18,8 +18,8 @@ const aboutData = {
     { icone: '✔', texto: 'Atendimento Especializado' },
     { icone: '✔', texto: 'Envio para Todo o Brasil' },
   ],
-  ctaTexto: 'Conheça Nossa História',
-  ctaHref: '/sobre',
+  ctaTexto: 'Conheça Nossos Produtos',
+  ctaHref: '/produtos',
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -45,7 +45,7 @@ export default function AboutStore() {
   }, []);
 
   return (
-    <section className="about-section">
+    <section className="about-section" id='sobre'>
       <div className="about-container" ref={containerRef}>
 
         {/* Coluna esquerda — imagem */}

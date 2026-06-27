@@ -3,36 +3,46 @@
 import Link from 'next/link';
 import '@/styles/Footer.css';
 import Image from "next/image";
+import { usePathname, useRouter } from 'next/navigation';
 
 // ─── Dados editáveis ──────────────────────────────────────────────────────────
+const WHATSAPP_NUMBER = '5515981335846'; // ex: 5515999990000
+const WHATSAPP_MESSAGE = 'Olá! Vim pelo site e gostaria de saber mais sobre os produtos.';
+
 const footerData = {
   descricao:
     'Há mais de uma década levando o melhor do universo country para todo o Brasil.',
   redes: [
-    { nome: 'Instagram', href: 'https://instagram.com/estacaocountry', icone: 'IG' },
-    { nome: 'Facebook', href: 'https://facebook.com/estacaocountry', icone: 'FB' },
-    { nome: 'WhatsApp', href: 'https://wa.me/55SEUNUMERO', icone: 'WA' },
+    { nome: 'Instagram', href: 'https://instagram.com/estacao.country', icone: 'IG' },
+    { nome: 'Facebook', href: 'https://www.facebook.com/100064565327834', icone: 'FB' },
+    { nome: 'WhatsApp', href: `https://wa.me/${5515981335846}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`, icone: 'WA' },
   ],
   institucional: [
-    { label: 'Sobre Nós', href: '/sobre' },
-    { label: 'Nossa História', href: '/historia' },
+    { label: 'Sobre Nós', href: '/#sobre' },
+    { label: 'Nossa História', href: '/#sobre' },
     { label: 'Contato', href: '/contato' },
     { label: 'Política de Privacidade', href: '/privacidade' },
-    { label: 'Termos de Uso', href: '/termos' },
+    { label: 'Trocas e Devoluções', href: '/termos' },
+    { label: 'Política de Envios', href: '/termos' },
+    { label: 'Pagamentos', href: '/termos' },
+    { label: 'Garantia dos Produtos', href: '/termos' },
+    { label: 'Cancelamentos', href: '/termos' },
   ],
   categorias: [
-    { label: 'Botas', href: '/botas' },
-    { label: 'Chapéus', href: '/chapeus' },
-    { label: 'Camisas', href: '/camisas' },
-    { label: 'Calças', href: '/calcas' },
-    { label: 'Feminino', href: '/feminino' },
-    { label: 'Masculino', href: '/masculino' },
+    { label: 'Botas', href: '/produtos?categoria=Botas' },
+    { label: 'Chapéus', href: '/produtos?categoria=Chapéus' },
+    { label: 'Camisas', href: '/produtos?categoria=Camisas' },
+    { label: 'Calças', href: '/produtos?categoria=Calças' },
+    { label: 'Cintos', href: '/produtos?categoria=Cintos' },
+    { label: 'Acessórios', href: '/produtos?categoria=Acessórios' },
+    { label: 'Feminino', href: '/produtos?genero=Feminino' },
+    { label: 'Masculino', href: '/produtos?genero=Masculino' },
   ],
   atendimento: {
-    telefone: '(15) 0000-0000',
-    whatsapp: '(15) 00000-0000',
+    telefone: '(15) 3527-7550',
+    whatsapp: '(15) 9 8133-5846',
     email: 'contato@estacaocountry.com.br',
-    horario: 'Seg–Sex: 8h às 18h\nSáb: 8h às 13h',
+    horario: 'Seg–Sex: 9h às 18h\nSáb: 9h às 16h30',
   },
   pagamentos: [
     { label: 'Visa', sigla: 'VISA' },
@@ -45,6 +55,19 @@ const footerData = {
 
 export default function Footer() {
   const ano = new Date().getFullYear();
+
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const irParaSobre = () => {
+    if (pathname === '/') {
+      document.getElementById('sobre')?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    } else {
+      router.push('/#sobre');
+    }
+  };
 
   return (
     <footer className="footer">
@@ -91,7 +114,19 @@ export default function Footer() {
           <ul className="footer-links">
             {footerData.institucional.map((item) => (
               <li key={item.label}>
-                <Link href={item.href} className="footer-link">{item.label}</Link>
+                {item.href === '/#sobre' ? (
+                  <button
+                    type="button"
+                    onClick={irParaSobre}
+                    className="footer-link footer-link-button"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link href={item.href} className="footer-link">
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

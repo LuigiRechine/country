@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import '@/styles/WhatsAppButton.css';
 
 // ─── Substitua pelo número oficial da loja ────────────────────────────────────
-const WHATSAPP_NUMBER = '55SEUNUMERO'; // ex: 5515999990000
+const WHATSAPP_NUMBER = '5515981335846'; // ex: 5515999990000
 const WHATSAPP_MESSAGE = 'Olá! Vim pelo site e gostaria de saber mais sobre os produtos.';
 // ─────────────────────────────────────────────────────────────────────────────
 
