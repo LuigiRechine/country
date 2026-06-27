@@ -1,0 +1,311 @@
+/* returnsSection.css — Estação Country */
+
+.returns-section {
+  background: #EFEBE9;
+  padding: 72px 0 112px;
+}
+
+.returns-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ─── Cabeçalho ──────────────────────────────────────────── */
+.returns-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.returns-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #3E2723;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px;
+}
+
+.returns-divider {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(to right, #C9A227, #E8B923);
+  border-radius: 2px;
+  margin: 0 auto 24px;
+}
+
+.returns-intro {
+  font-size: 1rem;
+  color: #5D4037;
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ─── Cards ──────────────────────────────────────────────── */
+.returns-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.returns-card {
+  background: #ffffff;
+  border: 1.5px solid #EDE4D5;
+  border-radius: 16px;
+  padding: 40px 44px;
+  box-shadow: 0 4px 16px rgba(62, 39, 35, 0.05);
+}
+
+/* Eyebrow do card */
+.returns-card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin-bottom: 10px;
+}
+
+/* Ícones Lucide herdam a cor do pai via currentColor */
+.returns-card-eyebrow svg {
+  color: #C9A227;
+  flex-shrink: 0;
+}
+
+.returns-card-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #3E2723;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #EDE4D5;
+}
+
+.returns-card p {
+  font-size: 0.96rem;
+  color: #4a3728;
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+/* ─── Lista ──────────────────────────────────────────────── */
+.returns-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.returns-list li {
+  font-size: 0.96rem;
+  color: #4a3728;
+  line-height: 1.75;
+  padding: 12px 16px 12px 44px;
+  background: #FDFAF6;
+  border: 1px solid #F0E8DC;
+  border-radius: 8px;
+  position: relative;
+}
+
+.returns-list li::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 19px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #C9A227;
+  flex-shrink: 0;
+}
+
+/* ─── Alerta (2ª troca) ──────────────────────────────────── */
+.returns-alert {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #FFF8E7;
+  border: 1.5px solid #C9A227;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 4px 0 24px;
+}
+
+.returns-alert-icon {
+  color: #C9A227;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.returns-alert p {
+  font-size: 0.93rem !important;
+  color: #3E2723 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* ─── Aviso (defeito/divergência) ───────────────────────── */
+.returns-notice {
+  background: #EFEBE9;
+  border-left: 3px solid #C9A227;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  font-size: 0.93rem;
+  color: #4a3728;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* ─── CTAs ───────────────────────────────────────────────── */
+.returns-cta-wrap {
+  border-top: 1px solid #EDE4D5;
+  padding-top: 20px;
+  margin-top: 8px;
+}
+
+.returns-cta-wrap p {
+  font-size: 0.9rem !important;
+  color: #5D4037 !important;
+  margin: 0 0 14px !important;
+}
+
+.returns-cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.returns-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 24px;
+  border-radius: 7px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.returns-cta-btn--primary {
+  background: #3E2723;
+  color: #EFEBE9;
+  border: 2px solid #3E2723;
+}
+
+.returns-cta-btn--primary:hover {
+  background: #C9A227;
+  border-color: #C9A227;
+  color: #3E2723;
+  transform: translateY(-2px);
+}
+
+.returns-cta-btn--outline {
+  background: transparent;
+  color: #3E2723;
+  border: 2px solid #3E2723;
+}
+
+.returns-cta-btn--outline:hover {
+  background: #3E2723;
+  color: #EFEBE9;
+  transform: translateY(-2px);
+}
+
+/* ─── Card de rodapé (CDC + Atendimento) ─────────────────── */
+.returns-footer-card {
+  background: #3E2723;
+  border-radius: 16px;
+  padding: 36px 44px;
+}
+
+.returns-footer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.returns-footer-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.returns-footer-icon {
+  color: #C9A227;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.returns-footer-item strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #C9A227;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.returns-footer-item p {
+  font-size: 0.9rem;
+  color: #D7CCC8;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.returns-link {
+  color: #C9A227;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.returns-link:hover {
+  color: #E8B923;
+  text-decoration: underline;
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+@media (max-width: 700px) {
+  .returns-card {
+    padding: 28px 24px;
+    border-radius: 12px;
+  }
+
+  .returns-footer-card {
+    padding: 28px 24px;
+    border-radius: 12px;
+  }
+
+  .returns-footer-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .returns-cta-group {
+    flex-direction: column;
+  }
+
+  .returns-cta-btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .returns-section {
+    padding: 48px 0 80px;
+  }
+
+  .returns-container {
+    padding: 0 16px;
+  }
+}

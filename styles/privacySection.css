@@ -1,0 +1,166 @@
+/* privacySection.css — Estação Country */
+
+.privacy-section {
+  background: #EFEBE9;
+  padding: 72px 0 112px;
+}
+
+.privacy-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ─── Cabeçalho ──────────────────────────────────────────── */
+.privacy-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.privacy-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #3E2723;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px;
+}
+
+.privacy-divider {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(to right, #C9A227, #E8B923);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ─── Conteúdo ───────────────────────────────────────────── */
+.privacy-content {
+  background: #ffffff;
+  border: 1.5px solid #EDE4D5;
+  border-radius: 16px;
+  padding: 52px 56px;
+  box-shadow: 0 4px 20px rgba(62, 39, 35, 0.06);
+}
+
+/* Parágrafos */
+.privacy-content p {
+  font-size: 0.97rem;
+  color: #4a3728;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.privacy-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Destaque (caixa alta) */
+.privacy-highlight {
+  background: #FDF8EF;
+  border-left: 3px solid #C9A227;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px !important;
+  font-weight: 700 !important;
+  color: #3E2723 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.65 !important;
+  margin: 24px 0 !important;
+}
+
+/* Títulos das seções */
+.privacy-section-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3E2723;
+  margin: 40px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EDE4D5;
+}
+
+.privacy-section-title:first-of-type {
+  margin-top: 32px;
+}
+
+/* Listas */
+.privacy-list {
+  padding-left: 0;
+  margin: 0 0 18px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.privacy-list li {
+  font-size: 0.97rem;
+  color: #4a3728;
+  line-height: 1.75;
+  padding-left: 20px;
+  position: relative;
+}
+
+.privacy-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C9A227;
+  flex-shrink: 0;
+}
+
+/* Links */
+.privacy-link {
+  color: #C9A227;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.privacy-link:hover {
+  color: #A07818;
+  text-decoration: underline;
+}
+
+/* Rodapé da política */
+.privacy-footer-note {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #EDE4D5;
+}
+
+.privacy-footer-note p {
+  font-size: 0.85rem !important;
+  color: #8d6e5a !important;
+  margin: 0 0 6px !important;
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+@media (max-width: 720px) {
+  .privacy-content {
+    padding: 36px 28px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-section {
+    padding: 48px 0 80px;
+  }
+
+  .privacy-container {
+    padding: 0 16px;
+  }
+
+  .privacy-content {
+    padding: 28px 20px;
+  }
+
+  .privacy-section-title {
+    font-size: 1.05rem;
+  }
+}

@@ -22,11 +22,11 @@ const footerData = {
     { label: 'Nossa História', href: '/#sobre' },
     { label: 'Contato', href: '/contato' },
     { label: 'Política de Privacidade', href: '/privacidade' },
-    { label: 'Trocas e Devoluções', href: '/termos' },
-    { label: 'Política de Envios', href: '/termos' },
-    { label: 'Pagamentos', href: '/termos' },
-    { label: 'Garantia dos Produtos', href: '/termos' },
-    { label: 'Cancelamentos', href: '/termos' },
+    { label: 'Trocas e Devoluções', href: '/trocas-e-devolucoes' },
+    { label: 'Política de Envios', href: '/envios' },
+    { label: 'Pagamentos', href: '/pagamentos' },
+    { label: 'Garantia dos Produtos', href: '/garantia' },
+    { label: 'Cancelamentos', href: '/cancelamentos' },
   ],
   categorias: [
     { label: 'Botas', href: '/produtos?categoria=Botas' },
@@ -41,7 +41,7 @@ const footerData = {
   atendimento: {
     telefone: '(15) 3527-7550',
     whatsapp: '(15) 9 8133-5846',
-    email: 'contato@estacaocountry.com.br',
+    email: 'estacaodamoda.itape@gmail.com',
     horario: 'Seg–Sex: 9h às 18h\nSáb: 9h às 16h30',
   },
   pagamentos: [
