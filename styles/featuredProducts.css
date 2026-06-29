@@ -16,7 +16,6 @@
   margin-bottom: 3.5rem;
 }
 
-/* Eyebrow decorativo — linha dourada com texto */
 .section-eyebrow {
   display: flex;
   align-items: center;
@@ -57,24 +56,123 @@
   line-height: 1.6;
 }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+/* ─── Wrapper do carrossel ───────────────────────────────── */
+.featured-carousel-wrapper {
+  position: relative;
 }
 
+/* Setas */
+.featured-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #E0D5CC;
+  color: #3E2723;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(62, 39, 35, 0.12);
+  transition: background 0.25s ease, border-color 0.25s ease,
+              color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+
+.featured-arrow:hover {
+  background: #C9A227;
+  border-color: #C9A227;
+  color: #3E2723;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.featured-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.featured-arrow--prev { left: -22px; }
+.featured-arrow--next { right: -22px; }
+
+/* Track (o que rola) */
+.featured-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* Esconde a scrollbar visualmente */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.featured-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cada card ocupa 1/4 do track no desktop */
+.featured-track .pc-card {
+  flex: 0 0 calc(25% - 18px);
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+/* Dots de navegação */
+.featured-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.featured-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D7CCC8;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.featured-dot--active {
+  background: #C9A227;
+  transform: scale(1.3);
+}
+
+/* ─── Tablet: 2 cards visíveis ───────────────────────────── */
 @media (max-width: 1024px) {
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .featured-arrow--prev { left: -16px; }
+  .featured-arrow--next { right: -16px; }
+
+  .featured-track .pc-card {
+    flex: 0 0 calc(50% - 12px);
   }
 }
 
-@media (max-width: 540px) {
+/* ─── Mobile: 1 card visível ─────────────────────────────── */
+@media (max-width: 600px) {
   .featured-section {
     padding: 64px 0;
   }
 
-  .featured-grid {
-    grid-template-columns: 1fr;
+  .featured-arrow {
+    display: none; /* setas somem; usa swipe */
+  }
+
+  .featured-track {
+    gap: 16px;
+    padding: 0 4px; /* pequena margem lateral */
+  }
+
+  .featured-track .pc-card {
+    flex: 0 0 calc(100% - 8px);
   }
 }
