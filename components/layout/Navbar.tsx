@@ -57,7 +57,7 @@ export default function Navbar() {
                   placeholder="Buscar produtos..."
                   className="search-input pl-10 pr-4 py-2.5 w-72 rounded-full text-sm focus:outline-none"
                 />
-                <Search className="absolute left-4 top-3 text-[#D4A017]" size={20} />
+                <Search className="absolute right-4 top-4.5 text-[#D4A017]" size={20} />
               </div>
 
               {/* Account */}

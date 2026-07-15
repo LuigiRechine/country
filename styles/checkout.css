@@ -1,0 +1,43 @@
+.checkout-page {
+  background: #f8f5f0;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.checkout-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #3E2723;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* Grid */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 60px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.checkout-left, .checkout-right {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(62, 39, 35, 0.1);
+  border: 1px solid #e8dfcf;
+}
+
+/* Responsivo */
+@media (max-width: 920px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
