@@ -21,7 +21,7 @@ const featuredProducts: Product[] = [
     cores: ['#3B1F0A', '#000000', '#8B4513'],
     tamanhos: ['38', '39', '40', '41', '42', '43'],
     destaque: 'Mais Vendido',
-    descricaoCurta: 'Bota de couro legítimo com solado de borracha. Alta durabilidade e conforto.',
+    descricao: 'Bota de couro legítimo com solado de borracha. Alta durabilidade e conforto.',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const featuredProducts: Product[] = [
     cores: ['#2C2C2C', '#704214', '#D2B48C'],
     tamanhos: ['P', 'M', 'G', 'GG'],
     destaque: 'Novo',
-    descricaoCurta: 'Chapéu de felt importado com aba larga e acabamento premium.',
+    descricao: 'Chapéu de felt importado com aba larga e acabamento premium.',
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const featuredProducts: Product[] = [
     imagens: ['/produtos/camisa-xadrez.webp'],
     cores: ['#8B0000', '#003366', '#006400'],
     tamanhos: ['P', 'M', 'G', 'GG', 'XGG'],
-    descricaoCurta: 'Camisa xadrez slim fit, tecido resistente com fechamento em botões de pérola.',
+    descricao: 'Camisa xadrez slim fit, tecido resistente com fechamento em botões de pérola.',
   },
   {
     id: 10,
@@ -67,7 +67,7 @@ const featuredProducts: Product[] = [
     cores: ['#1E3A8A', '#2C2C2C', '#5C4033'],
     tamanhos: ['34', '36', '38', '40', '42', '44'],
     destaque: 'Oferta',
-    descricaoCurta: 'Calça jeans feminina de cintura alta com strass e bordado floral.',
+    descricao: 'Calça jeans feminina de cintura alta com strass e bordado floral.',
   },
 ];
 
