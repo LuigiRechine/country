@@ -3,7 +3,7 @@ import { products } from '@/data/products';
 import ProductImageGallery from '@/components/product/ProductImageGallery';
 import ProductInfo from '@/components/product/ProductInfo';
 import ProductCard from '@/components/products/ProductCard';
-import DescriptionSection from '@/components/product/DescriptionSection'; // ← Novo componente
+import DescriptionSection from '@/components/product/DescriptionSection';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
@@ -27,13 +27,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       <Navbar />
       <div className="product-detail-page">
         <div className="product-main">
+          
+          {/* Imagem + Descrição (em mobile a descrição vem depois) */}
           <div className="esquerda">
             <ProductImageGallery imagens={product.imagens} nome={product.nome} />
             
-            <DescriptionSection descricao={product.descricao} />
+            {/* Descrição só aparece aqui no desktop */}
+            <div className="description-desktop">
+              <DescriptionSection descricao={product.descricao} />
+            </div>
           </div>
           
+          {/* Detalhes do produto (preço, variações, comprar) */}
           <ProductInfo product={product} />
+
+          {/* Descrição no Mobile - aparece depois dos detalhes */}
+          <div className="description-mobile">
+            <DescriptionSection descricao={product.descricao} />
+          </div>
+
         </div>
 
         {/* Produtos Relacionados */}
@@ -45,6 +57,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             ))}
           </div>
         </section>
+
       </div>
       <Footer />
       <WhatsAppButton />

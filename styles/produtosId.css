@@ -35,6 +35,16 @@
   color: black;
 }
 
+/* Esconde no mobile */
+.description-desktop {
+  display: block;
+}
+
+/* Mostra só no mobile */
+.description-mobile {
+  display: none;
+}
+
 .description-section h2{
   font-size: 25px;
   font-weight: bold;
@@ -63,6 +73,16 @@
   .product-main {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  /* No mobile: descrição vem depois do ProductInfo */
+  .description-desktop {
+    display: none;
+  }
+
+  .description-mobile {
+    display: block;
+    margin-top: 40px;
   }
 
   .related-grid {
