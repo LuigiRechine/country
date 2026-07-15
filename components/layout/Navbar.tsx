@@ -4,18 +4,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, Search, User, ShoppingCart } from 'lucide-react';
 import Image from "next/image";
+import { useCart } from '@/context/CartContext';
 import '@/styles/navbar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { totalItens } = useCart();
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Produtos', href: '/produtos' },
-    { name: 'Masculino', href: '/produtos?genero=Masculino' },   // ← era /masculino
-    { name: 'Feminino', href: '/produtos?genero=Feminino' },    // ← era /feminino
-    { name: 'Acessórios', href: '/produtos?categoria=Acessórios' }, // ← era /acessorios
-    { name: 'Contato', href: '/contato' },
+    { name: 'Home',       href: '/' },
+    { name: 'Produtos',   href: '/produtos' },
+    { name: 'Masculino',  href: '/produtos?genero=Masculino' },
+    { name: 'Feminino',   href: '/produtos?genero=Feminino' },
+    { name: 'Acessórios', href: '/produtos?categoria=Acessórios' },
+    { name: 'Contato',    href: '/contato' },
   ];
 
   return (
@@ -39,11 +41,7 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="nav-link text-lg"
-                >
+                <Link key={item.name} href={item.href} className="nav-link text-lg">
                   {item.name}
                 </Link>
               ))}
@@ -67,15 +65,17 @@ export default function Navbar() {
                 <User size={24} />
               </Link>
 
-              {/* Cart */}
+              {/* Cart — badge dinâmico */}
               <Link href="/carrinho" className="cart-icon text-[#EDE4D5] hover:text-[#D4A017] p-2 relative">
                 <ShoppingCart size={24} />
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  0
-                </span>
+                {totalItens > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                    {totalItens > 99 ? '99+' : totalItens}
+                  </span>
+                )}
               </Link>
 
-              {/* Hamburger - aria-label adicionado para acessibilidade */}
+              {/* Hamburger */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden text-[#EDE4D5] p-2"
@@ -102,7 +102,7 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {/* Search Mobile - ícone adicionado */}
+              {/* Search Mobile */}
               <div className="relative pt-4">
                 <input
                   type="text"

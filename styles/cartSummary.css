@@ -1,0 +1,113 @@
+/* cartSummary.css */
+.cart-summary {
+  background: #ffffff;
+  border: 1.5px solid #EDE4D5;
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cart-summary-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3E2723;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EDE4D5;
+}
+
+/* Barra frete grátis */
+.cart-summary-frete-progress { margin-bottom: 20px; }
+.cart-summary-frete-bar {
+  height: 6px;
+  background: #EDE4D5;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.cart-summary-frete-fill {
+  height: 100%;
+  background: linear-gradient(to right, #C9A227, #E8B923);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.cart-summary-frete-msg { font-size: 0.83rem; color: #5D4037; margin: 0; }
+.cart-summary-frete-msg strong { color: #3E2723; }
+.cart-summary-frete-msg--ok { color: #15803d; font-weight: 600; }
+
+/* Linhas de valor */
+.cart-summary-rows { display: flex; flex-direction: column; gap: 12px; }
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  color: #5D4037;
+}
+.cart-summary-gratis { color: #15803d; font-weight: 700; }
+.cart-summary-divider { height: 1px; background: #EDE4D5; margin: 4px 0; }
+.cart-summary-row--total {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3E2723;
+}
+.cart-summary-parcelas {
+  font-size: 0.78rem;
+  color: #A1887F;
+  text-align: right;
+  margin: -4px 0 0;
+}
+
+/* CTA */
+.cart-summary-btn {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: #3E2723;
+  color: #EFEBE9;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+.cart-summary-btn:hover {
+  background: #C9A227;
+  color: #3E2723;
+  transform: translateY(-2px);
+}
+.cart-summary-continue {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5D4037;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cart-summary-continue:hover { color: #C9A227; }
+
+/* Selos */
+.cart-summary-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #EDE4D5;
+}
+.cart-summary-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #8d6e5a;
+}
+.cart-summary-trust-item svg { color: #C9A227; flex-shrink: 0; }

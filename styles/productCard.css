@@ -1,4 +1,4 @@
-/* productCard.css — Estação Country */
+/* styles/productCard.css — Estação Country */
 
 .pc-card {
   background: #ffffff;
@@ -8,6 +8,7 @@
   transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .pc-card:hover {
@@ -15,7 +16,7 @@
   box-shadow: 0 20px 40px rgba(62, 39, 35, 0.16);
 }
 
-/* ─── Imagem ─────────────────────────────────────────────── */
+/* Imagem */
 .pc-image-wrap {
   position: relative;
   height: 300px;
@@ -32,7 +33,7 @@
   transform: scale(1.06);
 }
 
-/* Tags */
+/* Tags e badges */
 .tag {
   position: absolute;
   top: 14px;
@@ -51,11 +52,10 @@
 .tag-oferta         { background: #b91c1c; }
 .tag-mais-vendido   { background: #C9A227; color: #3E2723; }
 
-/* Badge de desconto */
 .pc-desconto {
   position: absolute;
   top: 14px;
-  right: 52px; /* ao lado do botão de favorito */
+  right: 52px;
   background: #b91c1c;
   color: #ffffff;
   font-size: 0.75rem;
@@ -65,7 +65,6 @@
   z-index: 2;
 }
 
-/* Botão favorito */
 .pc-fav-btn {
   position: absolute;
   top: 12px;
@@ -82,7 +81,6 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   z-index: 2;
   color: #5D4037;
-  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .pc-fav-btn:hover {
@@ -90,7 +88,7 @@
   transform: scale(1.12);
 }
 
-/* ─── Informações ────────────────────────────────────────── */
+/* Informações */
 .pc-info {
   padding: 18px 20px 22px;
   display: flex;
@@ -104,7 +102,7 @@
   color: #8d6e5a;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 0 0 4px;
+  margin-bottom: 4px;
 }
 
 .pc-nome {
@@ -113,10 +111,9 @@
   font-weight: 700;
   color: #3E2723;
   line-height: 1.3;
-  margin: 0 0 10px;
+  margin-bottom: 10px;
 }
 
-/* Avaliação */
 .pc-rating {
   display: flex;
   align-items: center;
@@ -124,19 +121,13 @@
   margin-bottom: 12px;
 }
 
-.pc-stars {
-  color: #C9A227;
-  font-size: 1rem;
-  letter-spacing: 1px;
-}
-
+.pc-stars { color: #C9A227; font-size: 1rem; }
 .pc-rating-num {
   font-size: 0.85rem;
   color: #5D4037;
   font-weight: 600;
 }
 
-/* Preço */
 .pc-preco-wrap {
   display: flex;
   align-items: baseline;
@@ -160,52 +151,114 @@
   font-size: 0.88rem;
   color: #15803d;
   font-weight: 600;
-  margin: 0 0 14px;
+  margin-bottom: 16px;
 }
 
 /* Cores */
 .pc-cores {
   display: flex;
   gap: 8px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 .pc-cor {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   border: 2px solid #ffffff;
   box-shadow: 0 0 0 1.5px #d1c9c5;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding: 0;
+  transition: all 0.2s ease;
 }
 
 .pc-cor:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 0 2px #C9A227;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2.5px #C9A227;
 }
 
-/* Botão */
-.pc-btn {
+/* Tamanhos */
+.pc-tamanhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.pc-tamanho {
+  padding: 6px 10px;
+  border: 1px solid #d1c9c5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: black;
+}
+
+.pc-tamanho:hover,
+.pc-tamanho--active {
+  border-color: #C9A227;
+  background: #FEFCE8;
+  color: #3E2723;
+  font-weight: 600;
+}
+
+.pc-tamanho-more {
+  padding: 6px 10px;
+  color: #8d6e5a;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* Ações (Botões) */
+.pc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-top: auto;
+}
+
+.pc-add-btn,
+.pc-btn {
   width: 100%;
-  padding: 13px;
-  background: #3E2723;
-  color: #ffffff;
-  border: 2px solid #3E2723;
+  padding: 13px 16px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pc-add-btn {
+  background: #C9A227;
+  color: #3E2723;
+  border: 2px solid #C9A227;
+}
+
+.pc-add-btn:hover {
+  background: #3E2723;
+  color: #ffffff;
+  border-color: #3E2723;
+}
+
+.pc-btn {
+  background: #3E2723;
+  color: #ffffff;
+  border: 2px solid #3E2723;
 }
 
 .pc-btn:hover {
-  background: #C9A227;
-  border-color: #C9A227;
+  background: #ffffff;
   color: #3E2723;
-  transform: translateY(-2px);
+}
+
+.pc-add-btn--ok {
+  background: #15803d;
+  color: white;
+  border-color: #15803d;
 }
