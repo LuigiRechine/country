@@ -26,5 +26,5 @@ export interface Product {
   cores: string[];
   tamanhos: string[];          // ← novo (ex: ['37', '38', '39'] ou ['P', 'M', 'G'])
   destaque?: ProductTag;
-  descricaoCurta: string;
+  descricao: string;
 }

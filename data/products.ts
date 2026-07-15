@@ -17,7 +17,7 @@ export const products: Product[] = [
     cores: ['#3B1F0A', '#000000', '#8B4513'],
     tamanhos: ['38', '39', '40', '41', '42', '43'],
     destaque: 'Mais Vendido',
-    descricaoCurta: 'Bota de couro legítimo com solado de borracha. Alta durabilidade e conforto.',
+    descricao: 'Bota de couro legítimo com solado de borracha. Alta durabilidade e conforto.',
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const products: Product[] = [
     cores: ['#2C2C2C', '#704214', '#D2B48C'],
     tamanhos: ['P', 'M', 'G', 'GG'],
     destaque: 'Novo',
-    descricaoCurta: 'Chapéu de felt importado com aba larga e acabamento premium.',
+    descricao: `O clássico da marca Stetson em felt premium, referência de qualidade e tradição no mundo country.\nCom acabamento impecável e conforto incomparável, este chapéu é confeccionado com material de alta densidade que oferece excelente proteção contra o sol enquanto mantém o formato por muito tempo. Ideal para uso diário ou em grandes ocasiões, ele eleva qualquer produção com elegância e autenticidade.`,
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ export const products: Product[] = [
     imagens: ['/produtos/camisa-xadrez.webp'],
     cores: ['#8B0000', '#003366', '#006400'],
     tamanhos: ['P', 'M', 'G', 'GG', 'XGG'],
-    descricaoCurta: 'Camisa xadrez slim fit, tecido resistente com fechamento em botões de pérola.',
+    descricao: 'Camisa xadrez slim fit, tecido resistente com fechamento em botões de pérola.',
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ export const products: Product[] = [
     cores: ['#3B1F0A', '#000000'],
     tamanhos: ['38', '40', '42', '44', '46'],
     destaque: 'Oferta',
-    descricaoCurta: 'Cinto de couro legítimo com fivela estilo rodeio banhada a ouro.',
+    descricao: 'Cinto de couro legítimo com fivela estilo rodeio banhada a ouro.',
   },
   {
     id: 5,
@@ -79,7 +79,7 @@ export const products: Product[] = [
     cores: ['#4E342E', '#000000', '#8B4513'],
     tamanhos: ['34', '35', '36', '37', '38', '39'],
     destaque: 'Mais Vendido',
-    descricaoCurta: 'Bota feminina estilo Texas com bordado artesanal e salto quadrado.',
+    descricao: 'Bota feminina estilo Texas com bordado artesanal e salto quadrado.',
   },
   {
     id: 6,
@@ -95,7 +95,7 @@ export const products: Product[] = [
     cores: ['#1e3a8a', '#334155'],
     tamanhos: ['38', '40', '42', '44', '46', '48'],
     destaque: 'Oferta',
-    descricaoCurta: 'Calça jeans de corte reto, ideal para uso com bota. Alta resistência.',
+    descricao: 'Calça jeans de corte reto, ideal para uso com bota. Alta resistência.',
   },
   {
     id: 7,
@@ -111,7 +111,7 @@ export const products: Product[] = [
     cores: ['#D2B48C', '#F5F5DC'],
     tamanhos: ['P', 'M', 'G'],
     destaque: 'Novo',
-    descricaoCurta: 'Chapéu de palha natural com laço decorativo e acabamento artesanal.',
+    descricao: 'Chapéu de palha natural com laço decorativo e acabamento artesanal.',
   },
   {
     id: 8,
@@ -125,7 +125,7 @@ export const products: Product[] = [
     imagens: ['/produtos/feminino/blusa-floral.webp'],
     cores: ['#8B0000', '#E8DABD', '#4B2E1A'],
     tamanhos: ['PP', 'P', 'M', 'G', 'GG'],
-    descricaoCurta: 'Camisa de flanela feminina com bordado country e botões de pressão.',
+    descricao: 'Camisa de flanela feminina com bordado country e botões de pressão.',
   },
   {
     id: 9,
@@ -141,7 +141,7 @@ export const products: Product[] = [
     cores: ['#8B6914', '#3B1F0A'],
     tamanhos: ['38', '39', '40', '41', '42', '43', '44'],
     destaque: 'Oferta',
-    descricaoCurta: 'Bota em couro nobuck com bico fino e cano alto. Leveza e estilo.',
+    descricao: 'Bota em couro nobuck com bico fino e cano alto. Leveza e estilo.',
   },
   {
     id: 10,
@@ -157,7 +157,7 @@ export const products: Product[] = [
     cores: ['#1E3A8A', '#2C2C2C', '#5C4033'],
     tamanhos: ['34', '36', '38', '40', '42', '44'],
     destaque: 'Oferta',
-    descricaoCurta: 'Calça jeans feminina de cintura alta com strass e bordado floral.',
+    descricao: 'Calça jeans feminina de cintura alta com strass e bordado floral.',
   },
   {
     id: 11,
@@ -171,7 +171,7 @@ export const products: Product[] = [
     imagens: ['/produtos/camisa-bordada-masc.jpg'],
     cores: ['#003366', '#000000', '#8B0000'],
     tamanhos: ['P', 'M', 'G', 'GG', 'XGG'],
-    descricaoCurta: 'Camisa social com bordado western e gola diferenciada. Visual premium.',
+    descricao: 'Camisa social com bordado western e gola diferenciada. Visual premium.',
   },
   {
     id: 12,
@@ -187,7 +187,7 @@ export const products: Product[] = [
     cores: ['#1A0A00', '#704214'],
     tamanhos: ['P', 'M', 'G', 'GG'],
     destaque: 'Mais Vendido',
-    descricaoCurta: 'O clássico da marca Stetson em felt premium. Acabamento impecável.',
+    descricao: 'O clássico da marca Stetson em felt premium. Acabamento impecável e conforto incomparável. Feito com material de alta qualidade, este chapéu oferece proteção contra o sol e um estilo atemporal que combina perfeitamente com qualquer look country ou casual.\n\nO clássico da marca Stetson em felt premium, referência de qualidade e tradição no mundo country. Com acabamento impecável e conforto incomparável, este chapéu é confeccionado com material de alta densidade que oferece excelente proteção contra o sol enquanto mantém o formato por muito tempo. Ideal para uso diário ou em grandes ocasiões, ele eleva qualquer produção com elegância e autenticidade.',
   },
   {
     id: 13,
@@ -203,7 +203,7 @@ export const products: Product[] = [
     cores: ['#3B1F0A', '#8B4513', '#D4A017'],
     tamanhos: ['36', '38', '40', '42'],
     destaque: 'Oferta',
-    descricaoCurta: 'Cinto feminino trançado em couro legítimo com fivela dourada.',
+    descricao: 'Cinto feminino trançado em couro legítimo com fivela dourada.',
   },
   {
     id: 14,
@@ -218,7 +218,7 @@ export const products: Product[] = [
     cores: ['#000000', '#3B1F0A'],
     tamanhos: ['39', '40', '41', '42', '43', '44'],
     destaque: 'Novo',
-    descricaoCurta: 'Bota masculina com solado tratorado, ideal para uso rural e urbano.',
+    descricao: 'Bota masculina com solado tratorado, ideal para uso rural e urbano.',
   },
   {
     id: 15,
@@ -233,7 +233,7 @@ export const products: Product[] = [
     imagens: ['/produtos/calca-sarja-masc.jpg'],
     cores: ['#556B2F', '#4A3728', '#8B6914'],
     tamanhos: ['38', '40', '42', '44', '46', '48'],
-    descricaoCurta: 'Calça sarja com elastano para conforto no uso diário e em festas.',
+    descricao: 'Calça sarja com elastano para conforto no uso diário e em festas.',
   },
   {
     id: 16,
@@ -249,6 +249,6 @@ export const products: Product[] = [
     cores: ['#4E342E', '#D2B48C'],
     tamanhos: ['34', '35', '36', '37', '38'],
     destaque: 'Novo',
-    descricaoCurta: 'Bota feminina cano curto com bordado floral e salto bloco. Versátil e elegante.',
+    descricao: 'Bota feminina cano curto com bordado floral e salto bloco. Versátil e elegante.',
   },
 ];
