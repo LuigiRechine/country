@@ -5,17 +5,18 @@
   font-weight: 700;
 }
 
-/* Inputs */
-input {
+/* DEPOIS (Afeta apenas os inputs do formulário de checkout) */
+.checkout-form input {
   width: 100%;
   padding: 15px 18px;
   border: 2px solid #d4c9b8;
   border-radius: 10px;
   font-size: 1.02rem;
   background: #fffaf0;
+  box-sizing: border-box; /* Boa prática para o padding não deformar o tamanho real */
 }
 
-input:focus {
+.checkout-form input:focus {
   outline: none;
   border-color: #C9A227;
 }

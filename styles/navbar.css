@@ -6,8 +6,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%; /* Use width 100% em vez de left/right isolados */
   z-index: 50;
+  box-sizing: border-box;
 }
 
 .navbar-logo{
@@ -52,8 +53,9 @@
   background-color: #1C140F;
   border: 2px solid #5C4634;
   color: #EDE4D5;
+  box-sizing: border-box; /* Garante que padding e borda não aumentem a altura real do input */
+  height: 42px; /* Fixa uma altura para que nenhum CSS externo consiga deformá-lo */
 }
-
 .search-input::placeholder {
   color: #8a7060;
 }

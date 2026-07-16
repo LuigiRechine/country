@@ -1,67 +1,139 @@
+/* --- ESTILO GERAL DA PÁGINA --- */
 .account-page {
-  background: #f8f5f0;
+  background: #f8f5f0; /* Fundo claro fixo */
+  color: #3E2723;      /* Texto marrom country fixo */
   min-height: 80vh;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .account-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .account-container h1 {
-  text-align: center;
-  margin-bottom: 40px;
+  text-align: left;
+  margin-bottom: 30px;
   color: #3E2723;
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 2px solid #e5d9c0;
+  padding-bottom: 15px;
 }
 
+/* --- GRID DE DUAS COLUNAS --- */
+.account-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* --- MENU LATERAL (ABAS) --- */
 .account-tabs {
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(62, 39, 35, 0.05);
+  border: 1px solid #e5d9c0;
 }
 
+/* Botões das Abas */
 .tab-btn {
-  padding: 14px 28px;
-  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px;
+  border: 1px solid #e5d9c0;
   background: white;
-  border-radius: 50px;
+  color: #5D4037; /* Força o texto do botão inativo a ser marrom escuro */
+  border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background: #fdfbf7;
+  color: #3E2723;
+  padding-left: 25px; /* Efeito sutil de deslocamento */
 }
 
 .tab-btn.active {
   background: #3E2723;
-  color: white;
+  color: #ffffff; /* Texto sempre branco no botão ativo */
+  padding-left: 25px;
+  border-color: #3E2723;
 }
 
-.account-tab-content {
-  background: white;
+/* --- CONTEÚDO DA PÁGINA (COLUNA DIREITA) --- */
+.account-content {
+  background: white; /* Garante fundo branco fixo */
+  color: #3E2723;    /* Texto marrom por padrão */
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(62, 39, 35, 0.08);
-  min-height: 400px;
+  border: 1px solid #e5d9c0;
+  min-height: 450px;
 }
 
+/* --- CARTÕES DE PEDIDOS (MANTIDO SEU DESIGN) --- */
 .order-card {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  background: #ffffff; /* Fundo branco fixo contra modo escuro */
+  color: #3E2723;      /* Texto escuro fixo */
   border: 1px solid #e5d9c0;
   border-radius: 12px;
   margin-bottom: 16px;
 }
 
+/* Botão de Editar */
 .edit-btn {
   margin-top: 20px;
   padding: 12px 28px;
   background: #C9A227;
-  color: #3E2723;
+  color: #3E2723; /* Força o texto marrom sobre o dourado */
   border: none;
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #b59020; /* Dourado um pouco mais escuro */
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 850px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .account-container h1 {
+    text-align: center;
+  }
+
+  .account-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .tab-btn {
+    width: auto;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 50px; /* Volta ao estilo arredondado no mobile */
+  }
+  
+  .tab-btn:hover, .tab-btn.active {
+    padding-left: 16px; /* Desativa o efeito de empurrar na horizontal */
+  }
 }

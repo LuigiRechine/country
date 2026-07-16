@@ -12,12 +12,12 @@ export default function Navbar() {
   const { totalItens } = useCart();
 
   const navItems = [
-    { name: 'Home',       href: '/' },
-    { name: 'Produtos',   href: '/produtos' },
-    { name: 'Masculino',  href: '/produtos?genero=Masculino' },
-    { name: 'Feminino',   href: '/produtos?genero=Feminino' },
+    { name: 'Home', href: '/' },
+    { name: 'Produtos', href: '/produtos' },
+    { name: 'Masculino', href: '/produtos?genero=Masculino' },
+    { name: 'Feminino', href: '/produtos?genero=Feminino' },
     { name: 'Acessórios', href: '/produtos?categoria=Acessórios' },
-    { name: 'Contato',    href: '/contato' },
+    { name: 'Contato', href: '/contato' },
   ];
 
   return (
@@ -51,17 +51,18 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
 
               {/* Search - Desktop */}
-              <div className="relative hidden sm:block">
+              <div className="relative hidden sm:block flex items-center">
                 <input
                   type="text"
                   placeholder="Buscar produtos..."
-                  className="search-input pl-10 pr-4 py-2.5 w-72 rounded-full text-sm focus:outline-none"
+                  className="search-input pl-10 pr-12 py-2.5 w-72 rounded-full text-sm focus:outline-none"
                 />
-                <Search className="absolute right-4 top-3 text-[#D4A017]" size={20} />
+                {/* Alterado: de 'top-3' para 'top-1/2 -translate-y-1/2' */}
+                <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-[#D4A017]" size={20} />
               </div>
 
               {/* Account */}
-              <Link href="/conta" className="account-icon text-[#EDE4D5] hover:text-[#D4A017] p-2">
+              <Link href="/login" className="account-icon text-[#EDE4D5] hover:text-[#D4A017] p-2">
                 <User size={24} />
               </Link>
 
@@ -103,13 +104,14 @@ export default function Navbar() {
               ))}
 
               {/* Search Mobile */}
-              <div className="relative pt-4">
+              <div className="relative pt-4 flex items-center">
                 <input
                   type="text"
                   placeholder="Buscar produtos..."
-                  className="search-input w-full pl-10 pr-4 py-3 rounded-full focus:outline-none"
+                  className="search-input w-full pl-10 pr-12 py-3 rounded-full focus:outline-none"
                 />
-                <Search className="absolute left-4 top-7 text-[#D4A017]" size={20} />
+                {/* Alterado: de 'top-7' para 'top-[calc(50%+8px)] -translate-y-1/2' para compensar o pt-4 */}
+                <Search className="absolute right-4 top-[calc(50%+8px)] -translate-y-1/2 text-[#D4A017]" size={20} />
               </div>
             </div>
           </div>

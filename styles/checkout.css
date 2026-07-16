@@ -1,7 +1,7 @@
 .checkout-page {
   background: #f8f5f0;
+  padding: 100px 20px 80px;   /* Mais espaço no topo para compensar o Navbar fixo */
   min-height: 100vh;
-  padding: 40px 20px;
 }
 
 .checkout-container {
@@ -36,6 +36,10 @@
 
 /* Responsivo */
 @media (max-width: 920px) {
+  .checkout-page {
+    padding: 80px 20px 60px;
+  }
+  
   .checkout-grid {
     grid-template-columns: 1fr;
     gap: 40px;

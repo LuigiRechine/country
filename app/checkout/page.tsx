@@ -43,32 +43,34 @@ export default function CheckoutPage() {
   }
 
   return (
-    <>
-      <Navbar />
-      <div className="checkout-page">
-        <div className="checkout-container">
-          <h1 className="checkout-title">Finalizar Compra</h1>
+  <>
+    <Navbar />
+    
+    <div className="checkout-page">
+      <div className="checkout-container">
+        <h1 className="checkout-title">Finalizar Compra</h1>
 
-          <div className="checkout-grid">
-            <div className="checkout-left">
-              <CheckoutForm />
-            </div>
+        <div className="checkout-grid">
+          <div className="checkout-left">
+            <CheckoutForm />
+          </div>
 
-            <div className="checkout-right">
-              <CheckoutSummary 
-                cart={cart} 
-                subtotal={subtotal} 
-                frete={frete} 
-                total={total} 
-                isProcessing={isProcessing}
-                onFinalizar={handleFinalizarCompra}
-              />
-            </div>
+          <div className="checkout-right">
+            <CheckoutSummary 
+              cart={cart} 
+              subtotal={subtotal} 
+              frete={frete} 
+              total={total} 
+              isProcessing={isProcessing}
+              onFinalizar={handleFinalizarCompra}
+            />
           </div>
         </div>
       </div>
-      <Footer />
-      <WhatsAppButton />
-    </>
-  );
+    </div>
+
+    <Footer />
+    <WhatsAppButton />
+  </>
+);
 }

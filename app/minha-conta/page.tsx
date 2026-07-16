@@ -27,24 +27,32 @@ export default function MinhaContaPage() {
         <div className="account-container">
           <h1>Minha Conta</h1>
 
-          <div className="account-tabs">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
+          {/* Wrapper do Grid de duas colunas */}
+          <div className="account-layout">
+            
+            {/* Coluna 1: Menu de Abas (Lado Esquerdo) */}
+            <div className="account-tabs">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Coluna 2: Conteúdo Dinâmico (Lado Direito) */}
+            <div className="account-content">
+              {activeTab === 'profile' && <ProfileTab />}
+              {activeTab === 'orders' && <OrdersTab />}
+              {activeTab === 'favorites' && <FavoritesTab />}
+              {activeTab === 'addresses' && <AddressesTab />}
+            </div>
+
           </div>
 
-          <div className="account-content">
-            {activeTab === 'profile' && <ProfileTab />}
-            {activeTab === 'orders' && <OrdersTab />}
-            {activeTab === 'favorites' && <FavoritesTab />}
-            {activeTab === 'addresses' && <AddressesTab />}
-          </div>
         </div>
       </div>
       <Footer />
